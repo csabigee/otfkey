@@ -55,7 +55,7 @@ module latch(height) {
     outline=[[0,0],[3,0],[2,1],[7,1],[12,1.5],[20,3],[20,4],[12,2.5],[7,2],[0,2]];
     linear_extrude(height) union() {
         polygon(outline);
-        //mirror([1,0,0]) polygon(outline);
+        mirror([1,0,0]) polygon(outline);
     }
 }
 
@@ -86,7 +86,7 @@ module movement() {
     
     union() {
         difference() {
-            cube([bodyScalerX*keyLength-5,bodyScalerY*keyWidth,wallWidth],true);
+            cube([bodyScalerX*keyLength-5,bodyScalerY*keyWidth-0.2,wallWidth],true);
             cube([bodyScalerX*keyLength-2*wallWidth-5,4,1.1*wallWidth],true);
             translate([0,6.1,-2]) wedge(4);
         }
@@ -116,10 +116,10 @@ module assembly(insertKey,keyOut) {
 }
 
 
-//translate([0,0,0]) assembly(true,false);
+translate([0,0,0]) assembly(true,false);
 
 //translate([0,0,1]) base();
-translate([0,0,0]) latch(4);
+//translate([0,0,0]) latch(4);
 //translate([0,0,1]) keyHolder(true);
 //translate([0,0,1]) movement();
 //translate([0,0,1]) lid();

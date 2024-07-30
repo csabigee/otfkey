@@ -75,7 +75,7 @@ module keyHolder(insertKey) {
 }
 
 module wedge(height) {
-    outline=[[0,1],[12,1],[17,0],[19,0],[27,3.5],[0,3.5]];
+    outline=[[0,1],[12,1],[17,0],[19,0],[27,4.5],[0,4.5]];
     linear_extrude(height) {
         union() {
             polygon(outline);
@@ -127,7 +127,7 @@ translate([0,0,0]) assembly(true,false);
 //translate([0,30,20]) lid();
 //wedge(4);
 //translate([0,0,1]) base();
-//translate([0,0,0]) latch(7);
+//translate([0,0,0]) latch(6);
 //translate([0,0,1]) keyHolder(true);
 //translate([0,0,1]) movement();
-//translate([0,0,1]) lid();
+//mirror([0,0,1])translate([0,0,-1]) lid();
